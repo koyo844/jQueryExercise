@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    趣味はなんですか?<br>
+    <p id="msg"></p>
+<button type="button" id="btn">ボタン</button><br> 
+<select id="select">
+<option value="0"> -- </option>
+<option value="1"> トライアスロン </option>
+<option value="2"> その他 </option>
+
+<body>
+    <span id="text">ここのテキストが隠れたり現れたりします</span><br> 
+    <button type="button" id="show_btn">表示</button>
+    <button type="button" id="hide_btn">非表示</button>
+
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script>
+'use strict';
+$(function() {
+    $("#btn").on("click", function(){ 
+        $("#msg").text("ボタンがクリックされました!");
+});
+    $("#select").on("change", function(){
+    $("#msg").text("セレクトボックスが変更されました!" 
+        + $("#select").val() + "が選択されました!");
+});
+
+$("#show_btn").on("click", function(){ 
+        $("#text").show();
+});
+    $("#hide_btn").on("click", function(){ 
+        $("#text").hide();
+});
+
+}); 
+</script>
+
+</body>
+</html>

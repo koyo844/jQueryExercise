@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+初めての jQuery
+<p id="msg">ここにメッセージが入ります</p>
+
+<button type="button" id="btn">ボタン</button><br> <select id="select">
+    <option value="0"> -- </option>
+    <option value="1"> 選択肢1 </option>
+    <option value="2"> 選択肢2 </option>
+    </select><br>
+    <input class="radio" type="radio" name="gendar" value="men">男 
+    <input class="radio" type="radio" name="gendar" value="women">女
+
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script>
+    'use strict';
+    $(function() {
+    alert("ready 関数開始!"); //ポップアップで表示
+    //css関連の操作
+    $("#msg").css("font-size", "18px").css("color", "red"); 
+    alert("font-size:" + $("#msg").css("font-size")); 
+    alert("color:" + $("#msg").css("color"));
+    }); 
+
+    $("#btn").on("click", function(){ 
+        $("#msg").text("ボタンがクリックされました!");
+});
+    $("#select").on("change", function(){
+    $("#msg").text("セレクトボックスが変更されました!" 
+    + $("#select").val() + "が選択されました!");
+});
+    $(".radio").on("change", function(){
+    $("#msg").text("ラジオボタンが選択されました!"
+    + $(".radio:checked").val() + "が選択されました!")
+});
+
+</script>
+</body>
+</html>
